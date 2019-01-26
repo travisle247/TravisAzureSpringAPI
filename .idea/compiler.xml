@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ApiServices" />
+        <module name="TravisAzureSpringAPI" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiServices" options="-parameters" />
+      <module name="TravisAzureSpringAPI" options="-parameters" />
     </option>
   </component>
 </project>
