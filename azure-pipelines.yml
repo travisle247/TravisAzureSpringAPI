@@ -23,8 +23,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '**/*.jar'
-    contents: '**/*.config'
+    contents: '**/?(*.jar|*.config)'
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
