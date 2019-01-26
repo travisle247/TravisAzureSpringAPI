@@ -47,6 +47,13 @@
 
 
     <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/wwwroot</directory>
+                <filtering>true</filtering>
+                <targetPath>${basedir}/target</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
