@@ -77,7 +77,7 @@
                     <!-- Web App information -->
                     <resourceGroup>TravisSpringAppServices</resourceGroup>
                     <appName>TravisSpringAppServicesTest</appName>
-                    <region>Central US</region>
+                    <region>westus2</region>
 
                     <!-- Java Runtime Stack for Web App on Linux-->
                     <linuxRuntime>jre8</linuxRuntime>
