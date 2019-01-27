@@ -53,28 +53,49 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>0.1.5</version>
                 <configuration>
-                    <deploymentType>jar</deploymentType>
-
-                    <!-- configure app to run on port 80, required by App Service -->
-                    <appSettings>
-                        <property>
-                            <name>JAVA_OPTS</name>
-                            <value>-Dserver.port=80</value>
-                        </property>
-                    </appSettings>
-                    <!-- Web App information -->
-                    <resourceGroup>TravisSpringAppServices</resourceGroup>
-                    <appName>TravisSpringAPITest</appName>
-                    <region>Central US</region>
-                    <!-- Java Runtime Stack for Web App on Linux-->
-                    <linuxRuntime>jre8</linuxRuntime>
+                    <authentication>
+                        <serverId>azure-auth</serverId>
+                    </authentication>
+                    <resourceGroup>maven-plugin</resourceGroup>
+                    <appName>maven-web-app-${maven.build.timestamp}</appName>
+                    <region>westus</region>
+                    <javaVersion>1.8</javaVersion>
+                    <deploymentType>ftp</deploymentType>
+                    <stopAppDuringDeployment>true</stopAppDuringDeployment>
+                    <resources>
+                        <resource>
+                            <directory>${project.basedir}/target</directory>
+                            <targetPath>/</targetPath>
+                            <includes>
+                                <include>*.jar</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>${project.basedir}</directory>
+                            <targetPath>/</targetPath>
+                            <includes>
+                                <include>web.config</include>
+                            </includes>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
