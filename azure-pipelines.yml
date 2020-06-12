@@ -26,4 +26,4 @@ steps:
     azureSubscription: 'Visual Studio Enterprise (aa2d8073-cf46-4f53-abef-78339f602b9c)'
     appType: 'webAppLinux'
     WebAppName: 'SpringbootReactTX'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/target/*.war'
