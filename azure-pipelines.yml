@@ -12,10 +12,10 @@ variables:
   azureSubscription: '4b61684a-8bea-40a7-ac45-91aec6b3a8d7'
 
   # Web app name
-  webAppName: 'travisspringbootreactdirect'
+  webAppName: 'travisspringbootdirect'
 
   # Environment name
-  environmentName: 'travisspringbootreactdirect'
+  environmentName: 'travisspringbootdirect'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -60,7 +60,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: travisspringbootreactdirect'
+            displayName: 'Azure Web App Deploy: travisspringbootdirect'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
